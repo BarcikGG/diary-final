@@ -1,0 +1,15 @@
+C:\Users\danil\Desktop\c# projects\Diary\Diary\bin\Debug\net6.0\Diary.exe
+C:\Users\danil\Desktop\c# projects\Diary\Diary\bin\Debug\net6.0\Diary.deps.json
+C:\Users\danil\Desktop\c# projects\Diary\Diary\bin\Debug\net6.0\Diary.runtimeconfig.json
+C:\Users\danil\Desktop\c# projects\Diary\Diary\bin\Debug\net6.0\Diary.dll
+C:\Users\danil\Desktop\c# projects\Diary\Diary\bin\Debug\net6.0\Diary.pdb
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.csproj.AssemblyReference.cache
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.AssemblyInfoInputs.cache
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.AssemblyInfo.cs
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.csproj.CoreCompileInputs.cache
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.dll
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\refint\Diary.dll
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.pdb
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\Diary.genruntimeconfig.cache
+C:\Users\danil\Desktop\c# projects\Diary\Diary\obj\Debug\net6.0\ref\Diary.dll
