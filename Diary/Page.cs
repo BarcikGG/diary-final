@@ -13,5 +13,7 @@ namespace Diary
         public DateTime date;
         public string title_1;
         public string title_2;
+        public string d_1;
+        public string d_2;
     }
 }

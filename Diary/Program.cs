@@ -40,25 +40,33 @@ namespace Diary
         {
             int position = 1;
             int page = 0;
-            
             Page page_1 = new Page()
             {
                 date = DateTime.Now,
                 title_1 = "  1. Поиграть в доту",
-                title_2 = "  2. Сварить суп"
+                d_1 = "Пикнуть пуджа в мид\nУйти с лайна 0 10\nКупить мом и пойти в лес\nЛивнуть на 25 минуте",
+                title_2 = "  2. Сварить суп",
+                d_2 = "Рецепт борща: свекла\nnкапуста\nnморковь\nкартофель\nлук\nnмясо"
             };
             Page page_2 = new Page()
             {
                 date = DateTime.Now,
                 title_1 = "  1. пойти на пары",
-                title_2 = "  2. поспать"
+                d_1 = "4 пары капец :(",
+                title_2 = "  2. поспать",
+                d_2 = "Я люблю спать"
             };
             Page page_3 = new Page()
             {
                 date = DateTime.Now,
                 title_1 = "  1. new task",
-                title_2 = "  2. new task 2"
+                d_1 = "aasssdf", 
+                title_2 = "  2. new task 2",
+                d_2 = "disc 2"
             };
+            
+            List<Page> pages = new List<Page>()
+            {page_1, page_2, page_3};
 
             m1(page_1, position);
 
@@ -165,16 +173,14 @@ namespace Diary
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_1.date.AddDays(-1)}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("Пикнуть пуджа в мид\nУйти с лайна 0 10\n" +
-                                        "Купить мом и пойти в лес\nливнуть на 25 минуте");
+                                    Console.WriteLine(page_1.d_1);
                                 }
                                 else if (position == 2)
                                 {
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_1.date.AddDays(-1)}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("Рецепт борща: свекла\nкапуста\nморковь\n" +
-                                        "картофель\n"+"лук\nмясо");
+                                    Console.WriteLine(page_1.d_2);
                                 }
                                 break;
                             case 1:
@@ -183,14 +189,14 @@ namespace Diary
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_2.date}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("4 пары капец :( ");
+                                    Console.WriteLine(page_2.d_1);
                                 }
                                 else if (position == 2)
                                 {
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_2.date}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("Сон - это важно, поспи часов 8");
+                                    Console.WriteLine(page_2.d_2);
                                 }
                                 break;
                             case 2:
@@ -199,14 +205,14 @@ namespace Diary
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_3.date.AddDays(+1)}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("Лень чета писать, тут по аналогии с прошлыми тасками");
+                                    Console.WriteLine(page_3.d_1);
                                 }
                                 else if (position == 2)
                                 {
                                     Console.Clear();
                                     Console.WriteLine($"Выбарана дата: {page_3.date.AddDays(+1)}");
                                     Console.WriteLine("<------------описание дела------------->");
-                                    Console.WriteLine("Это никто не увидит, саша лох");
+                                    Console.WriteLine(page_3.d_2);
                                 }
                                 break;
                             case 3:
