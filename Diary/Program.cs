@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace Diary
@@ -42,7 +43,7 @@ namespace Diary
             int page = 0;
             Page page_1 = new Page()
             {
-                date = DateTime.Now,
+                date = DateTime.Now.AddDays(-1),
                 title_1 = "  1. Поиграть в доту",
                 d_1 = "Пикнуть пуджа в мид\nУйти с лайна 0 10\nКупить мом и пойти в лес\nЛивнуть на 25 минуте",
                 title_2 = "  2. Сварить суп",
@@ -58,15 +59,31 @@ namespace Diary
             };
             Page page_3 = new Page()
             {
-                date = DateTime.Now,
+                date = DateTime.Now.AddDays(+1),
                 title_1 = "  1. new task",
                 d_1 = "aasssdf", 
                 title_2 = "  2. new task 2",
                 d_2 = "disc 2"
             };
-            
-            List<Page> pages = new List<Page>()
-            {page_1, page_2, page_3};
+            Page page_4 = new Page()
+            {
+                date = DateTime.Now.AddDays(+2),
+                title_1 = "  1. aboba",
+                d_1 = "afd",
+                title_2 = "  2. aboba 2",
+                d_2 = "afghh"
+            };
+            Page page_5 = new Page()
+            {
+                date = DateTime.Now.AddDays(+3),
+                title_1 = "  1. хз че писать",
+                d_1 = "описание",
+                title_2 = "  2. ладно",
+                d_2 = "еще одно описание"
+            };
+
+            //List<Page> pages = new List<Page>()
+            //{page_1, page_2, page_3};
 
             m1(page_1, position);
 
@@ -80,24 +97,24 @@ namespace Diary
                         if (position! <= 0)
                         {
                             position--;
-                            UpDown(page, position, page_1, page_2, page_3);
+                            UpDown(page, position, page_1, page_2, page_3, page_4, page_5);
                         }
                         else
                         {
                             position=1;
-                            UpDown(page, position, page_1, page_2, page_3);
+                            UpDown(page, position, page_1, page_2, page_3, page_4, page_5);
                         }
                         break;
                     case ConsoleKey.DownArrow:
                         if (position < 2)
                         {
                             position++;
-                            UpDown(page, position, page_1, page_2, page_3);
+                            UpDown(page, position, page_1, page_2, page_3, page_4, page_5);
                         }
                         else 
                         {
                             position=2;
-                            UpDown(page, position, page_1, page_2, page_3);
+                            UpDown(page, position, page_1, page_2, page_3, page_4, page_5);
                         }
                         break;
                     case ConsoleKey.RightArrow:
@@ -126,7 +143,15 @@ namespace Diary
                                 Console.WriteLine("Здесь будет ваша заметка");
                             }
                         }
-                        else if (page > 3)
+                        else if (page == 4)
+                        {
+                            m4(page_4, position);
+                        }
+                        else if (page == 5)
+                        {
+                            m5(page_5, position);
+                        }
+                        else if (page > 5)
                         {
                             page--;
                         }
@@ -148,6 +173,14 @@ namespace Diary
                         else if (page == 2)
                         {
                             m3(page_3, position);
+                        }
+                        else if (page == 3)
+                        {
+                            user_m(position);
+                        }
+                        else if (page==4)
+                        {
+                            m4(page_4, position);
                         }
                         else if (page < -1)
                         {
@@ -171,14 +204,14 @@ namespace Diary
                                 if (position == 1)
                                 {
                                     Console.Clear();
-                                    Console.WriteLine($"Выбарана дата: {page_1.date.AddDays(-1)}");
+                                    Console.WriteLine($"Выбарана дата: {page_1.date}");
                                     Console.WriteLine("<------------описание дела------------->");
                                     Console.WriteLine(page_1.d_1);
                                 }
                                 else if (position == 2)
                                 {
                                     Console.Clear();
-                                    Console.WriteLine($"Выбарана дата: {page_1.date.AddDays(-1)}");
+                                    Console.WriteLine($"Выбарана дата: {page_1.date}");
                                     Console.WriteLine("<------------описание дела------------->");
                                     Console.WriteLine(page_1.d_2);
                                 }
@@ -210,7 +243,7 @@ namespace Diary
                                 else if (position == 2)
                                 {
                                     Console.Clear();
-                                    Console.WriteLine($"Выбарана дата: {page_3.date.AddDays(+1)}");
+                                    Console.WriteLine($"Выбарана дата: {page_3.date}");
                                     Console.WriteLine("<------------описание дела------------->");
                                     Console.WriteLine(page_3.d_2);
                                 }
@@ -239,6 +272,38 @@ namespace Diary
                                     Console.WriteLine("Куда мы лезим, заметки еще нет");
                                 }
                                 break;
+                            case 4:
+                                if (position == 1)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"Выбарана дата: {page_4.date}");
+                                    Console.WriteLine("<------------описание дела------------->");
+                                    Console.WriteLine(page_4.d_1);
+                                }
+                                else if (position == 2)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"Выбарана дата: {page_4.date}");
+                                    Console.WriteLine("<------------описание дела------------->");
+                                    Console.WriteLine(page_4.d_2);
+                                }
+                                break;
+                            case 5:
+                                if (position == 1)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"Выбарана дата: {page_5.date}");
+                                    Console.WriteLine("<------------описание дела------------->");
+                                    Console.WriteLine(page_5.d_1);
+                                }
+                                else if (position == 2)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine($"Выбарана дата: {page_5.date}");
+                                    Console.WriteLine("<------------описание дела------------->");
+                                    Console.WriteLine(page_5.d_2);
+                                }
+                                break;
                         }
                         break;
                     case ConsoleKey.Escape:
@@ -248,7 +313,7 @@ namespace Diary
             }
         }
 
-        static void UpDown(int page, int position, Page page_1, Page page_2, Page page_3) 
+        static void UpDown(int page, int position, Page page_1, Page page_2, Page page_3, Page page_4, Page page_5) 
         {
             if (page == 0)
             {
@@ -266,12 +331,20 @@ namespace Diary
             {
                 user_m(position);
             }
+            else if (page == 4)
+            {
+                m4(page_4, position);
+            }
+            else if (page == 5)
+            {
+                m5(page_5, position);
+            }
         }
 
         static void m1(Page page_1, int position)
         {
             Console.Clear();
-            Console.WriteLine($"Выбарана дата: {page_1.date.AddDays(-1)}");
+            Console.WriteLine($"Выбарана дата: {page_1.date}");
             Console.WriteLine(page_1.title_1);
             Console.WriteLine(page_1.title_2);
             Console.SetCursorPosition(0, position);
@@ -291,13 +364,31 @@ namespace Diary
         static void m3(Page page_3, int position)
         {
             Console.Clear();
-            Console.WriteLine($"Выбарана дата: {page_3.date.AddDays(+1)}");
+            Console.WriteLine($"Выбарана дата: {page_3.date}");
             Console.WriteLine(page_3.title_1);
             Console.WriteLine(page_3.title_2);
             Console.SetCursorPosition(0, position);
             Console.WriteLine("->");
         }
 
+        static void m4(Page page_4, int position)
+        {
+            Console.Clear();
+            Console.WriteLine($"Выбарана дата: {page_4.date}");
+            Console.WriteLine(page_4.title_1);
+            Console.WriteLine(page_4.title_2);
+            Console.SetCursorPosition(0, position);
+            Console.WriteLine("->");
+        }
+        static void m5(Page page_5, int position)
+        {
+            Console.Clear();
+            Console.WriteLine($"Выбарана дата: {page_5.date}");
+            Console.WriteLine(page_5.title_1);
+            Console.WriteLine(page_5.title_2);
+            Console.SetCursorPosition(0, position);
+            Console.WriteLine("->");
+        }
         static void add_m()
         {
             Console.Clear();
